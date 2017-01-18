@@ -1,33 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Page inscription">
+  <meta name="author" content="Thomas Loiseau">
+  <title>CSS/HTML Workshop with Drivy</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/clean-blog.min.css" rel="stylesheet"><!--too hard to change-->
+  <link href="css/css-perso.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header-image">
+    <div class="headline"></div>
+  </header>
+
+  <!-- Content Section -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <center><h1 class="section-heading">Calculation of Drivy</h1></center><br><br>
+
+          <div id="car">
+            <!--MODEL-->
+            <hr>
+            <small><front id='modelLabel'></front></small><br>
+            <input class="model" id="model" type="text" placeholder="Car model" onkeyup='changeLabel("model","modelLabel")'><br><br>
+
+            <!--PRICE BY DAY-->
+            <hr>
+            <small><front id='price-by-dayLabel'></front></small><br>
+            <input class="price-by-day" id="price-by-day" type="number" placeholder="Price by day" onkeyup='changeLabel("price-by-day","price-by-dayLabel")'><br><br>
+
+            <!--PRICE BY KM-->
+            <hr>
+            <small><front id='price-by-kmLabel'></front></small><br>
+            <input class="price-by-km" id="price-by-km" type="number" placeholder="Price by km" onkeyup='changeLabel("price-by-km","price-by-kmLabel")'><br><br>
+          </div>
+
+          <div id="rental">
+            <!--BEGIN DATE-->
+            <hr>
+            <small><front id='beginLabel'></front></small><br>
+            <input class="begin" id="begin" type="text" placeholder="Rental begin date" onfocus='changeDateLabel("begin","beginLabel")'><br><br>
+
+            <!--END DATE-->
+            <hr>
+            <small><front id='endLabel'></front></small><br>
+            <input class="end" id="end" type="text" placeholder="Rental end date" onfocus='changeDateLabel("end","endLabel")'><br><br>
+
+            <!--DISTANCE-->
+            <hr>
+            <small><front id='distanceLabel'></front></small><br>
+            <input class="distance" id="distance" type="number" placeholder="Distance in km" onkeyup='changeLabel("distance","distanceLabel")'><br><br>
+          </div>
+
+          <hr>
+          <br>
+          <div style="text-align:left">
+            <input class="option" id="option" type="checkbox" placeholder="Deductible option" />
+            <label for="option" style="float: left;">I would like to take out accident insurance for $ 4 per day</label>
+          </div>
+          <br>
+          <br>
+          <center><button id="compute" class="myButton">Compute</button></center>
+          <br>
+          <br>
+          
+          <hr>
+          <div id="actors"></div>
         </div>
-      {{/actors}}
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="drivy.js"></script>
-    <script src="index.js"></script>
-  </body>
+      </div>
+    </div>
+  </section>
+</body>
+
+<script id="template" type="x-tmpl-mustache">
+{{#actors}}
+<div class="actor">
+<span>{{who}}</span>
+<span>{{type}}</span>
+<span>{{amount}}</span>
+</div>
+{{/actors}}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+<script src="javascript/drivy.js"></script>
+<script src="javascript/index.js"></script>
+<script src="javascript/javascript-perso.js"></script>
+
 </html>
