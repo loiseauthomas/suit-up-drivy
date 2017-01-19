@@ -23,6 +23,8 @@ hr{
     font-weight:bold;
     padding:13px 32px;
     text-decoration:none;
+    display: block;
+    margin : auto;
 }
 .myButton:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
@@ -51,8 +53,8 @@ hr{
 }
 .headline {padding: 120px 0;}
 
-input{
-	font-size: 2em; 
+input:not([type=checkbox]){
+	font-size: 1em; 
 	border: 0px; 
 	width:100%;
 }
@@ -64,4 +66,22 @@ front{
 
 section style{
 	background-color: rgba(255, 255, 255, 1);
+}
+
+h1{
+	text-align:center;
+}
+
+.title-header{
+  font-family:Arial;
+  font-weight:bold;
+  color:#ffffff;
+  text-align:right;
+  margin-right: 10%;
+}
+.actors-contener{
+  font-weight:bold; 
+  text-align:center; 
+  color:#ffffff; 
+  background-color:#408c99;
 }
